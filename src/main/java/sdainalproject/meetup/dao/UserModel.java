@@ -11,11 +11,12 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Data
-//@Table(name = "user")
+@Table(name = "user")
 public class UserModel {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     Integer id;
     String name;
     String email;
+    String password;
 }

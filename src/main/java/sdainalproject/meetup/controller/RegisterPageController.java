@@ -28,6 +28,6 @@ public class RegisterPageController {
 //            model.addAttribute("userRegisterDto",userRegisterDto);
             return "registration";
         }
-        return "welcome";
+        return "redirect:/welcomePage";
     }
 }

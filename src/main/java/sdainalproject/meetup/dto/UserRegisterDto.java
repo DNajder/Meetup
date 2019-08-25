@@ -6,24 +6,23 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.lang.NonNull;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 @Getter
 @Setter
 @ToString(exclude = "password")
 public class UserRegisterDto {
 
-    @NonNull
+    @NotBlank(message = "WPISZ NAZWĘ UŻTKOWNIKA")
     @Size(max = 50)
     String name;
 
+    @NotBlank
     @Pattern(regexp = ".+@.+")
-    @Email
+    @Email(message = "WPISZ POPRAWNY ADRES E-MAIL")
     String email;
 
-
+@NotBlank(message = "WPISZ POPRAWNE HASŁO")
     @Size(min = 8, max = 30)
     String password;
 

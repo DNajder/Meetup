@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -8,20 +8,23 @@
 <body>
 <h1>Register</h1>
 <!--th:action="@/registration"-->
-<form method="post" th:action="@{/register}" th:object="userRegisterDto">
+<form method="post" th:action="@{/register}" th:object="${userRegisterDto}">
     <div class="form-group">
         <label for="Name">Name</label>
-        <input type="text" class="form-control" id="Name" name="name" placeholder="User Name" th:value="*{name}">
-        <small class="Help">We'll never share your email with anyone else.</small>
+        <input type="text" class="form-control" id="Name" name="name" placeholder="User Name" th:field="*{name}">
+        <span th:errors="*{name}">Invalid username</span>
+        <small class="Help">Nazwa użytkownika nie może być pusta i musi mieć max 50 znaków</small>
     </div>
     <div class="form-group">
         <label for="Email1">Email address</label>
-        <input type="email" class="form-control" id="Email1" th:value="*{}" name="email"  placeholder="E-mail">
+        <input type="email" class="form-control" id="Email1" name="email" placeholder="E-mail" th:field="*{email}">
+        <span th:errors="*{email}">Invalid username</span>
         <small class="Help">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
         <label for="password">Password</label>
-        <input type="text" class="form-control" id="password" name="password" placeholder="Password">
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password" th:field="*{password}">
+        <span th:errors="*{password}">Invalid username</span>
         <small class="Help">We'll never share your email with anyone else.</small>
     </div>
 
