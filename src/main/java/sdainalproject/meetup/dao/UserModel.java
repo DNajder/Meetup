@@ -16,8 +16,6 @@ public class UserModel {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     Integer id;
-    String firstName;
-    String lastName;
+    String name;
     String email;
-    String gender;
 }
