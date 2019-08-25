@@ -16,7 +16,7 @@ public class UserRegisterToModelMapper implements Converter<UserRegisterDto, Use
         final UserModel userModel = new UserModel();
         userModel.setName(userDto.getName());
         userModel.setEmail(userDto.getEmail());
-        userModel.setPassword(userDto.getPassword());
+        userModel.setPasswordHash(userDto.getPassword());
         return userModel;
     }
 }

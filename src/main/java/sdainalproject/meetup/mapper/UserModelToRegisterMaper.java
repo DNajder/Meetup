@@ -13,7 +13,7 @@ public class UserModelToRegisterMaper implements Converter<UserModel, UserRegist
        final UserRegisterDto userRegisterDto = new UserRegisterDto();
         userRegisterDto.setName(userModel.getName());
         userRegisterDto.setEmail(userModel.getEmail());
-        userRegisterDto.setPassword(userModel.getPassword());
+        userRegisterDto.setPassword(userModel.getPasswordHash());
         return userRegisterDto;
     }
 
