@@ -2,10 +2,9 @@ package sdainalproject.meetup.dao;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+
+import java.util.Set;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -17,7 +16,16 @@ public class UserModel {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     Long id;
+
+    @Column(name = "name", unique = true)
     String name;
+
+    @Column(name = "emial")
     String email;
+
+    @Column(name = "password_hash")
     String passwordHash;
+
+    @ManyToMany
+    private Set<RoleModel> roles;
 }
